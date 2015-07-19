@@ -1,0 +1,566 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.021377')  ORDER BY "events"."starts_at" ASC[0m
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_flashes.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 527ms (Views: 519.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.548852"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "Event 1"], ["price", 10.0], ["starts_at", "2015-07-21 12:23:45.547534"], ["updated_at", "2015-07-19 12:23:45.548852"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.550186"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "Event 2"], ["price", 10.0], ["starts_at", "2015-07-20 12:23:45.549946"], ["updated_at", "2015-07-19 12:23:45.550186"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.551706')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.574009"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.573524"], ["updated_at", "2015-07-19 12:23:45.574009"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 100], ["created_at", "2015-07-19 12:23:45.575012"], ["description", "Hunker down at the Hackathon!"], ["image_file_name", "hackathon.png"], ["location", "Austin"], ["name", "Hackathon"], ["price", 15.0], ["starts_at", "2015-08-03 12:23:45.574667"], ["updated_at", "2015-07-19 12:23:45.575012"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 50], ["created_at", "2015-07-19 12:23:45.575909"], ["description", "Practice your craft kata style!"], ["image_file_name", "katacamp.png"], ["location", "Dallas"], ["name", "Kata Camp"], ["price", 75.0], ["starts_at", "2015-08-18 12:23:45.575572"], ["updated_at", "2015-07-19 12:23:45.575909"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.577262')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.695020"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 5618740329"], ["price", 10.0], ["starts_at", "2015-07-18 12:23:45.694285"], ["updated_at", "2015-07-19 12:23:45.695020"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.696567')  ORDER BY "events"."starts_at" ASC[0m
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.702459"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 5316490278"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.702020"], ["updated_at", "2015-07-19 12:23:45.702459"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.712732')  ORDER BY "events"."starts_at" ASC[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.717452"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 6528943071"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.716745"], ["updated_at", "2015-07-19 12:23:45.717452"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.719462')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.731753"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 1925784630"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.731130"], ["updated_at", "2015-07-19 12:23:45.731753"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started GET "/events/1/registrations/new" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by RegistrationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.2ms)
+  Rendered registrations/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+Started POST "/events/1/registrations" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "registration"=>{"name"=>"Joe Developer", "email"=>"joe@gmail.com", "how_heard"=>"Twitter"}, "commit"=>"Create Registration", "event_id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:45.757922"], ["email", "joe@gmail.com"], ["event_id", 1], ["how_heard", "Twitter"], ["name", "Joe Developer"], ["updated_at", "2015-07-19 12:23:45.757922"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/events/1/registrations
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/events/1/registrations" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by RegistrationsController#index as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.1ms)[0m  [1mSELECT "registrations".* FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered registrations/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.779132"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 0639125478"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.777778"], ["updated_at", "2015-07-19 12:23:45.779132"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events/1/registrations/new" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by RegistrationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered registrations/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"
+Started POST "/events/1/registrations" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "registration"=>{"name"=>"", "email"=>"", "how_heard"=>""}, "commit"=>"Create Registration", "event_id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shared/_errors.html.erb (1.6ms)
+  Rendered registrations/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.829601"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 8342195076"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.829080"], ["updated_at", "2015-07-19 12:23:45.829601"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.837408"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 4203718569"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.836999"], ["updated_at", "2015-07-19 12:23:45.837408"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started DELETE "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/events
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.847380')  ORDER BY "events"."starts_at" ASC
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.890171"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 1467320859"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.889753"], ["updated_at", "2015-07-19 12:23:45.890171"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-19 12:23:45.891450"], ["email", "joe@gmail.com"], ["event_id", 1], ["how_heard", "Twitter"], ["name", "Joe Developer"], ["updated_at", "2015-07-19 12:23:45.891450"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "registrations" WHERE "registrations"."id" = ?  [["id", 1]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.901683"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 0926548713"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.901289"], ["updated_at", "2015-07-19 12:23:45.901683"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:45.902760"], ["email", "joe@gmail.com"], ["event_id", 1], ["how_heard", "Twitter"], ["name", "Joe Developer"], ["updated_at", "2015-07-19 12:23:45.902760"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:45.903939"], ["email", "joe@gmail.com"], ["event_id", 1], ["how_heard", "Twitter"], ["name", "Joe Developer"], ["updated_at", "2015-07-19 12:23:45.903939"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.907346"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 2147068359"], ["price", 10.0], ["starts_at", "2015-10-19 12:23:45.906856"], ["updated_at", "2015-07-19 12:23:45.907346"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.907985')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.909679"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 1503297684"], ["price", 10.0], ["starts_at", "2015-04-19 12:23:45.909037"], ["updated_at", "2015-07-19 12:23:45.909679"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.910326')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.911606"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 7546829130"], ["price", 10.0], ["starts_at", "2015-10-19 12:23:45.911046"], ["updated_at", "2015-07-19 12:23:45.911606"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.912646"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 9485231076"], ["price", 10.0], ["starts_at", "2015-09-19 12:23:45.912238"], ["updated_at", "2015-07-19 12:23:45.912646"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.913609"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 3807542619"], ["price", 10.0], ["starts_at", "2015-08-19 12:23:45.913218"], ["updated_at", "2015-07-19 12:23:45.913609"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:45.914127')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.915565"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.915148"], ["updated_at", "2015-07-19 12:23:45.915565"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-19 12:23:45.916702"], ["email", "joe@gmail.com"], ["event_id", 1], ["how_heard", "Twitter"], ["name", "Larry"], ["updated_at", "2015-07-19 12:23:45.916702"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:45.917559"], ["email", "joe@gmail.com"], ["event_id", 1], ["how_heard", "Twitter"], ["name", "Moe"], ["updated_at", "2015-07-19 12:23:45.917559"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.918426"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "Code Kata"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.918030"], ["updated_at", "2015-07-19 12:23:45.918426"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:45.919397"], ["email", "joe@gmail.com"], ["event_id", 2], ["how_heard", "Twitter"], ["name", "Curly"], ["updated_at", "2015-07-19 12:23:45.919397"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events/1/registrations" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by RegistrationsController#index as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered registrations/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.939826"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 7826543091"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.938953"], ["updated_at", "2015-07-19 12:23:45.939826"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.978554"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 7958326041"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:45.977984"], ["updated_at", "2015-07-19 12:23:45.978554"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:45.990833"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 9236781540"], ["price", 0.0], ["starts_at", "2015-07-29 12:23:45.990344"], ["updated_at", "2015-07-19 12:23:45.990833"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/events" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-19 12:23:46.004112')  ORDER BY "events"."starts_at" ASC[0m
+  Rendered events/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Started GET "/events/new" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#new as HTML
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered events/_form.html.erb (9.9ms)
+  Rendered events/new.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+Started POST "/events" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"name"=>"New Event Name", "description"=>"A very fun event you should attend", "location"=>"Denver, CO", "price"=>"10.00", "starts_at(1i)"=>"2016", "starts_at(2i)"=>"7", "starts_at(3i)"=>"19", "starts_at(4i)"=>"12", "starts_at(5i)"=>"23", "capacity"=>"75", "image_file_name"=>"event.png"}, "commit"=>"Create Event"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:46.030994"], ["description", "A very fun event you should attend"], ["image_file_name", "event.png"], ["location", "Denver, CO"], ["name", "New Event Name"], ["price", 10.0], ["starts_at", "2016-07-19 12:23:00.000000"], ["updated_at", "2015-07-19 12:23:46.030994"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY "events"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/events/new" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#new as HTML
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered events/_form.html.erb (3.5ms)
+  Rendered events/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events"
+Started POST "/events" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"name"=>"", "description"=>"", "location"=>"", "price"=>"", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"7", "starts_at(3i)"=>"19", "starts_at(4i)"=>"12", "starts_at(5i)"=>"23", "capacity"=>"1", "image_file_name"=>""}, "commit"=>"Create Event"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_errors.html.erb (1.1ms)
+  Rendered events/_form.html.erb (4.8ms)
+  Rendered events/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:46.117977"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 7209831564"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:46.117203"], ["updated_at", "2015-07-19 12:23:46.117977"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+Started GET "/events/1/edit" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered events/_form.html.erb (6.7ms)
+  Rendered events/edit.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+Started PATCH "/events/1" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"name"=>"Updated Event Name", "description"=>"A fun evening of bug smashing!", "location"=>"Denver", "price"=>"10", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"7", "starts_at(3i)"=>"29", "starts_at(4i)"=>"12", "starts_at(5i)"=>"23", "capacity"=>"75", "image_file_name"=>"bugsmash.png"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "events" SET "name" = ?, "starts_at" = ?, "updated_at" = ? WHERE "events"."id" = 1  [["name", "Updated Event Name"], ["starts_at", "2015-07-29 12:23:00.000000"], ["updated_at", "2015-07-19 12:23:46.143484"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/events/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/events/1" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 75], ["created_at", "2015-07-19 12:23:46.165369"], ["description", "A fun evening of bug smashing!"], ["image_file_name", "bugsmash.png"], ["location", "Denver"], ["name", "BugSmash 2315607849"], ["price", 10.0], ["starts_at", "2015-07-29 12:23:46.164812"], ["updated_at", "2015-07-19 12:23:46.165369"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events/1/edit" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered events/_form.html.erb (7.6ms)
+  Rendered events/edit.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+Started PATCH "/events/1" for 127.0.0.1 at 2015-07-19 08:23:46 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"name"=>" ", "description"=>"A fun evening of bug smashing!", "location"=>"Denver", "price"=>"10", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"7", "starts_at(3i)"=>"29", "starts_at(4i)"=>"12", "starts_at(5i)"=>"23", "capacity"=>"75", "image_file_name"=>"bugsmash.png"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shared/_errors.html.erb (0.4ms)
+  Rendered events/_form.html.erb (3.7ms)
+  Rendered events/edit.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

@@ -1,0 +1,103 @@
+  [1m[36m (162.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (166.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEvents (20121121153536)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20121121153536"]]
+  [1m[35m (177.2ms)[0m  commit transaction
+Migrating to AddFieldsToEvents (20121121175436)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "events" ADD "starts_at" datetime
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "events" ADD "description" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20121121175436"]]
+  [1m[36m (173.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddImageFileAndCapacityToEvents (20121210230623)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "events" ADD "image_file_name" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "events" ADD "capacity" integer DEFAULT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20121210230623"]]
+  [1m[35m (180.1ms)[0m  commit transaction
+Migrating to CreateRegistrations (20121214204822)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "registrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "how_heard" varchar(255), "event_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_registrations_on_event_id" ON "registrations" ("event_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20121214204822"]]
+  [1m[36m (164.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:16.451184"], ["description", "Join us for a fun evening of bug smashing! It's a great way to get involved in open source projects whether you're reporting bugs, fixing bugs, or even inadvertently creating a few bugs!"], ["image_file_name", "bugsmash.png"], ["location", "Wynkoop in LoDo, Denver, CO"], ["name", "BugSmash"], ["price", 0.0], ["starts_at", "2015-10-27 12:23:16.443800"], ["updated_at", "2015-07-19 12:23:16.451184"]]
+  [1m[35m (174.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 100], ["created_at", "2015-07-19 12:23:16.629010"], ["description", "Got a killer app idea you've been itching to work on? Hunker down at the Hackathon! This is an intense, focused day of hacking on anything you want. The entry fee goes toward a bounty of cash and prizes for winners in a variety of categories."], ["image_file_name", "hackathon.png"], ["location", "Buffalo Billiards, Austin, TX"], ["name", "Hackathon"], ["price", 15.0], ["starts_at", "2015-11-16 12:23:16.443956"], ["updated_at", "2015-07-19 12:23:16.629010"]]
+  [1m[36m (165.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 50], ["created_at", "2015-07-19 12:23:16.795327"], ["description", "Kata Camp is where developers go to practice their craft without the interruptions of a typical project. Forget about having to actually ship something. Tell your manager you're going to Kata Camp for the day! Price includes a buffet lunch and a leather-bound journal to record your kata achievements."], ["image_file_name", "katacamp.png"], ["location", "Double R Ranch, Dallas, TX"], ["name", "Kata Camp"], ["price", 75.0], ["starts_at", "2015-12-16 12:23:16.444032"], ["updated_at", "2015-07-19 12:23:16.795327"]]
+  [1m[35m (156.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 15], ["created_at", "2015-07-19 12:23:16.953499"], ["description", "Start your day off right with a good cup of Joe while you sling some code. By the time you hit the office, you'll be all tuned up!"], ["image_file_name", "coffeecode.png"], ["location", "Stumptown Coffee, Portland, OR"], ["name", "Coffee and Code"], ["price", 0.0], ["starts_at", "2016-01-05 12:23:16.444106"], ["updated_at", "2015-07-19 12:23:16.953499"]]
+  [1m[36m (140.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 150], ["created_at", "2015-07-19 12:23:17.095387"], ["description", "Brew up the tastiest Mac app and win! Entry fee includes a stylish apron."], ["image_file_name", "cocoacookoff.png"], ["location", "1 Infinite Loop, Cupertino, CA"], ["name", "Cocoa Cook-off"], ["price", 25.0], ["starts_at", "2016-01-15 12:23:16.444157"], ["updated_at", "2015-07-19 12:23:17.095387"]]
+  [1m[35m (157.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 200], ["created_at", "2015-07-19 12:23:17.253912"], ["description", "Join us for a non-stop evening of Muppet mania! We'll watch all the hits (and flops), starting with the classics from back in the day and ending with the latest release."], ["image_file_name", "moviemarathon.png"], ["location", "Disney Theatre, Orlando, FL"], ["name", "Muppets Movie Marathon"], ["price", 15.0], ["starts_at", "2016-01-25 12:23:16.444337"], ["updated_at", "2015-07-19 12:23:17.253912"]]
+  [1m[36m (156.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capacity", 75], ["created_at", "2015-07-19 12:23:17.412221"], ["description", "Come sing along with your favorite country band in Music City! Cover charge includes a confidence-boosting beverage of your choice and entry into the YeeHaw Yodelin' contest."], ["image_file_name", "karaoke.png"], ["location", "Hokey Pokey Saloon, Nashville, TN"], ["name", "Hokey Karaoke"], ["price", 25.0], ["starts_at", "2016-02-04 12:23:16.444398"], ["updated_at", "2015-07-19 12:23:17.412221"]]
+  [1m[35m (156.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("capacity", "created_at", "description", "image_file_name", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["capacity", 30], ["created_at", "2015-07-19 12:23:17.570706"], ["description", "Come meet local Rails developers and enjoy a technical talk by a local celebrity. This week's topic is a comparison of testing frameworks, templating systems, and whether to use tabs or spaces."], ["image_file_name", "placeholder.png"], ["location", "Reston, VA"], ["name", "Rails User Group"], ["price", 0.0], ["starts_at", "2015-07-17 12:23:16.444455"], ["updated_at", "2015-07-19 12:23:17.570706"]]
+  [1m[36m (156.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."name" = 'BugSmash' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:17.743111"], ["email", "larry@stooges.com"], ["event_id", 1], ["how_heard", "Newsletter"], ["name", "Larry"], ["updated_at", "2015-07-19 12:23:17.743111"]]
+  [1m[36m (159.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-19 12:23:17.903877"], ["email", "moe@stooges.com"], ["event_id", 1], ["how_heard", "Blog Post"], ["name", "Moe"], ["updated_at", "2015-07-19 12:23:17.903877"]]
+  [1m[35m (215.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:18.120534"], ["email", "curly@stooges.com"], ["event_id", 1], ["how_heard", "Twitter"], ["name", "Curly"], ["updated_at", "2015-07-19 12:23:18.120534"]]
+  [1m[36m (173.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."name" = 'Kata Camp' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "registrations" ("created_at", "email", "event_id", "how_heard", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:23:18.296174"], ["email", "moe@stooges.com"], ["event_id", 3], ["how_heard", "Web Search"], ["name", "Moe"], ["updated_at", "2015-07-19 12:23:18.296174"]]
+  [1m[36m (173.1ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150719123202)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "password_digest" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150719123202"]]
+  [1m[36m (197.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('brandon@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:42:24.434083"], ["email", "brandon@example.com"], ["name", "Brandon"], ["password_digest", "$2a$10$/5XwVn/ws5aA2AFmNRKJ.O7nLFlvahprMD/cPa2Mqj0cCZJC4yz1u"], ["updated_at", "2015-07-19 12:42:24.434083"]]
+  [1m[36m (156.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('carrie@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-19 12:46:03.951123"], ["email", "carrie@example.com"], ["name", "Carrie"], ["password_digest", "$2a$10$m67j1VUXDoUqnzV.cuqy8.Gxm62MEn2TKUHzfl6B1n.3fGkopawUm"], ["updated_at", "2015-07-19 12:46:03.951123"]]
+  [1m[36m (148.2ms)[0m  [1mcommit transaction[0m
