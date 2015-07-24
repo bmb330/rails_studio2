@@ -28,6 +28,10 @@ describe "Signing in" do
 		expect(current_path).to eq(user_path(user))
 
 		expect(page).to have_text("Welcome back, #{user.name}!")
+
+		expect(page).to have_link(user.name)
+		expect(page).not_to have_link('Sign In')
+		expect(page).not_to have_link('Sign Up')
 	end
 
 	it "does not sign in the user if the email/password combination is invalid" do
@@ -44,5 +48,8 @@ describe "Signing in" do
 
 		expect(page).to have_text('Invalid')
 
+		expect(page).not_to have_link(user.name)
+		expect(page).to have_link('Sign In')
+		expect(page).to have_link('Sign Up')
 	end
 end
