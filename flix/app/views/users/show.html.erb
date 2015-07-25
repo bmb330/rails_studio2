@@ -7,7 +7,18 @@
 		<%= @user.created_at.strftime("%B %Y") %>
 	</p>
 </header>
-
+<% if @reviews.any? %>
+	<h3>Movie Reviews</h3>
+	<ol>
+		<% @reviews.each do |review| %>
+			<li>
+				<%= link_to review.movie.title, review.movie %>
+				<span class="review"><%= pluralize(review.stars, 'star') %></span>
+				<span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
+			</li>
+		<% end %>
+	</ol>
+<% end %>
 <footer>
 	<nav>
 		<% if current_user?(@user) %>
