@@ -7,6 +7,16 @@
 		<%= @user.created_at.strftime("%B %Y") %>
 	</p>
 </header>
+<% if @favorite_movies.any? %>
+	<h3>Favorite Movies</h3>
+	<ol>
+	<% @favorite_movies.each do |movie| %>
+		<li>
+			<%= link_to movie.title, movie %>
+		</li>
+	<% end %>
+	</ol>
+<% end %>
 <% if @reviews.any? %>
 	<h3>Movie Reviews</h3>
 	<ol>
