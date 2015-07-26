@@ -9801,3 +9801,1044 @@ Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-25 13:06:07 -0400
 
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 13:06:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategories (20150725193258)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150725193258"]]
+  [1m[36m (181.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateCategories (20150725193258)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "categories"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20150725193258'[0m
+  [1m[35m (115.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategories (20150725193521)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150725193521"]]
+  [1m[36m (132.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategorizations (20150725193628)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "categorizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "category_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categorizations_on_event_id" ON "categorizations" ("event_id")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categorizations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categorizations_on_event_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categorizations_on_category_id" ON "categorizations" ("category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150725193628"]]
+  [1m[36m (126.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categorizations_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categorizations_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categorizations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categorizations_on_event_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_event_id' AND type='index'
+[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Class' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-07-25 19:40:13.936780"], ["name", "Class"], ["updated_at", "2015-07-25 19:40:13.936780"]]
+  [1m[35m (134.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'User Group' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-07-25 19:40:14.073834"], ["name", "User Group"], ["updated_at", "2015-07-25 19:40:14.073834"]]
+  [1m[35m (344.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Social' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-07-25 19:40:14.419385"], ["name", "Social"], ["updated_at", "2015-07-25 19:40:14.419385"]]
+  [1m[35m (1194.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Free' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-07-25 19:40:15.615547"], ["name", "Free"], ["updated_at", "2015-07-25 19:40:15.615547"]]
+  [1m[35m (140.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Paid' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-07-25 19:40:15.757455"], ["name", "Paid"], ["updated_at", "2015-07-25 19:40:15.757455"]]
+  [1m[35m (106.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Ruby' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-07-25 19:40:15.865813"], ["name", "Ruby"], ["updated_at", "2015-07-25 19:40:15.865813"]]
+  [1m[35m (106.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Rails' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-07-25 19:40:15.973926"], ["name", "Rails"], ["updated_at", "2015-07-25 19:40:15.973926"]]
+  [1m[35m (98.6ms)[0m  commit transaction
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."name" = 'Social' LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"   ORDER BY "events"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categorizations" ("category_id", "created_at", "event_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 3], ["created_at", "2015-07-25 19:41:11.551365"], ["event_id", 1], ["updated_at", "2015-07-25 19:41:11.551365"]]
+  [1m[35m (143.1ms)[0m  commit transaction
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "categorizations" ON "events"."id" = "categorizations"."event_id" WHERE "categorizations"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"  WHERE "categories"."id" IN (2, 3, 5)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "categorizations" ("category_id", "created_at", "event_id", "updated_at") VALUES (?, ?, ?, ?)  [["category_id", 2], ["created_at", "2015-07-25 19:42:33.081767"], ["event_id", 1], ["updated_at", "2015-07-25 19:42:33.081767"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "categorizations" ("category_id", "created_at", "event_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2015-07-25 19:42:33.082702"], ["event_id", 1], ["updated_at", "2015-07-25 19:42:33.082702"]]
+  [1m[35m (145.5ms)[0m  commit transaction
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"  WHERE "categories"."id" IN (2, 3)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "categorizations" WHERE "categorizations"."event_id" = ? AND "categorizations"."category_id" = 5[0m  [["event_id", 1]]
+  [1m[35m (167.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "categorizations" WHERE "categorizations"."event_id" = ? AND "categorizations"."category_id" IN (3, 2)  [["event_id", 1]]
+  [1m[36m (162.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"  WHERE "categories"."id" IN (2, 5)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "categorizations" ("category_id", "created_at", "event_id", "updated_at") VALUES (?, ?, ?, ?)  [["category_id", 2], ["created_at", "2015-07-25 19:43:30.512082"], ["event_id", 1], ["updated_at", "2015-07-25 19:43:30.512082"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "categorizations" ("category_id", "created_at", "event_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2015-07-25 19:43:30.513022"], ["event_id", 1], ["updated_at", "2015-07-25 19:43:30.513022"]]
+  [1m[35m (129.4ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-25 20:07:20.310914')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 4]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 6]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 7]]
+  Rendered events/index.html.erb within layouts/application (34.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (13.1ms)
+  Rendered layouts/_flashes.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 294ms (Views: 269.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/hackathon.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/coffeecode.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/karaoke.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/moviemarathon.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/katacamp.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/cocoacookoff.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/assets/arrow.png" for 127.0.0.1 at 2015-07-25 16:07:20 -0400
+
+
+Started GET "/events/1" for 127.0.0.1 at 2015-07-25 16:07:22 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes"  WHERE "likes"."user_id" = ? AND "likes"."event_id" = 1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ? LIMIT 1[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (11.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_flashes.html.erb (0.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 51.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes"  WHERE "likes"."user_id" = ? AND "likes"."event_id" = 1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ? LIMIT 1[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (10.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 47.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-25 16:08:05 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2015-07-25 16:08:54 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-25 20:08:54.975797')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 7]]
+  Rendered events/index.html.erb within layouts/application (16.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 82ms (Views: 80.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/hackathon.png" for 127.0.0.1 at 2015-07-25 16:08:55 -0400
+
+
+Started GET "/assets/coffeecode.png" for 127.0.0.1 at 2015-07-25 16:08:55 -0400
+
+
+Started GET "/assets/katacamp.png" for 127.0.0.1 at 2015-07-25 16:08:55 -0400
+
+
+Started GET "/assets/moviemarathon.png" for 127.0.0.1 at 2015-07-25 16:08:55 -0400
+
+
+Started GET "/assets/cocoacookoff.png" for 127.0.0.1 at 2015-07-25 16:08:55 -0400
+
+
+Started GET "/assets/karaoke.png" for 127.0.0.1 at 2015-07-25 16:08:55 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."name" = 'Brandon' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE (LOWER("users"."email") = LOWER('brandon@example.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "admin" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["admin", "t"], ["updated_at", "2015-07-25 20:09:27.252465"]]
+  [1m[36m (189.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/events" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-25 20:09:36.764154')  ORDER BY "events"."starts_at" ASC[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 4]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 5]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 7]]
+  Rendered events/index.html.erb within layouts/application (8.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/cocoacookoff.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/moviemarathon.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/katacamp.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/hackathon.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/coffeecode.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/karaoke.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-07-25 16:09:36 -0400
+
+
+Started GET "/events/1" for 127.0.0.1 at 2015-07-25 16:09:41 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT  "likes".* FROM "likes"  WHERE "likes"."user_id" = ? AND "likes"."event_id" = 1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ? LIMIT 1  [["event_id", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (5.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2015-07-25 16:09:43 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_errors.html.erb (1.2ms)
+  Rendered events/_form.html.erb (9.8ms)
+  Rendered events/edit.html.erb within layouts/application (10.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2015-07-25 16:11:15 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.3ms)
+  Rendered events/_form.html.erb (6.9ms)
+  Rendered events/edit.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Categroy):
+    32:                          placeholder: "GIF, JPG, or PNG file name" %>
+    33:       </li>
+    34: 			<li>
+    35: 				<%= f.collection_check_boxes(:category_ids, Categroy.all, :id, :name) %>
+    36: 			</li>
+    37:     </ol>
+    38:     <p>
+  app/views/events/_form.html.erb:35:in `block in _app_views_events__form_html_erb___3533020159129318327_43799400'
+  app/views/events/_form.html.erb:1:in `_app_views_events__form_html_erb___3533020159129318327_43799400'
+  app/views/events/edit.html.erb:5:in `_app_views_events_edit_html_erb___3648544940948629684_43825540'
+
+
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.2/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.2/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.2/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered events/_form.html.erb (10.9ms)
+  Rendered events/edit.html.erb within layouts/application (11.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-25 16:11:49 -0400
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  Rendered events/_form.html.erb (16.1ms)
+  Rendered events/edit.html.erb within layouts/application (16.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 77ms (Views: 57.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:43 -0400
+
+
+Started PATCH "/events/1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sGpAU0HGXOOQhVcfarG4Zv1/moyMdasoRjaqEpzK//0=", "event"=>{"name"=>"BugSmash", "description"=>"Join us for a fun evening of bug smashing! It's a great way to get involved in open source projects whether you're reporting bugs, fixing bugs, or even inadvertently creating a few bugs!", "location"=>"Wynkoop in LoDo, Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"10", "starts_at(3i)"=>"27", "starts_at(4i)"=>"12", "starts_at(5i)"=>"23", "capacity"=>"75", "image_file_name"=>"bugsmash.png", "category_ids"=>[""]}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "categorizations" WHERE "categorizations"."event_id" = ? AND "categorizations"."category_id" IN (2, 5)  [["event_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "starts_at" = ?, "updated_at" = ? WHERE "events"."id" = 1[0m  [["starts_at", "2015-10-27 12:23:00.000000"], ["updated_at", "2015-07-25 20:14:47.126635"]]
+  [1m[35m (193.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 200ms (ActiveRecord: 193.7ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes"  WHERE "likes"."user_id" = ? AND "likes"."event_id" = 1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ? LIMIT 1[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (9.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 49.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-25 16:14:47 -0400
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2015-07-25 16:14:53 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered events/_form.html.erb (8.4ms)
+  Rendered events/edit.html.erb within layouts/application (8.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_flashes.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/events/1" for 127.0.0.1 at 2015-07-25 16:15:01 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sGpAU0HGXOOQhVcfarG4Zv1/moyMdasoRjaqEpzK//0=", "event"=>{"name"=>"BugSmash", "description"=>"Join us for a fun evening of bug smashing! It's a great way to get involved in open source projects whether you're reporting bugs, fixing bugs, or even inadvertently creating a few bugs!", "location"=>"Wynkoop in LoDo, Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"10", "starts_at(3i)"=>"27", "starts_at(4i)"=>"12", "starts_at(5i)"=>"23", "capacity"=>"75", "image_file_name"=>"bugsmash.png", "category_ids"=>["3", "4", ""]}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"  WHERE "categories"."id" IN (3, 4)
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categorizations" ("category_id", "created_at", "event_id", "updated_at") VALUES (?, ?, ?, ?)  [["category_id", 3], ["created_at", "2015-07-25 20:15:01.992733"], ["event_id", 1], ["updated_at", "2015-07-25 20:15:01.992733"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "categorizations" ("category_id", "created_at", "event_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2015-07-25 20:15:01.994158"], ["event_id", 1], ["updated_at", "2015-07-25 20:15:01.994158"]]
+  [1m[35m (344.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 353ms (ActiveRecord: 345.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.0ms)[0m  SELECT  "likes".* FROM "likes"  WHERE "likes"."user_id" = ? AND "likes"."event_id" = 1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ? LIMIT 1[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_flashes.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-25 16:15:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-25 16:15:02 -0400

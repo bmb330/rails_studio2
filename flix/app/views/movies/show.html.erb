@@ -34,6 +34,17 @@
 		</ol>
 	<% end %>
   
+	<h3>Genres</h3>
+	<% if @genres.any? %>
+		<ol>
+		<% @genres.each do |genre| %>
+			<li>
+				<%= link_to genre.name %>
+			</li>
+		<% end %>
+		</ol>
+	<% end %>
+
   <h3>Cast</h3>
   <p>
     <%= @movie.cast %>
