@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_movies, through: :favorites, source: :movie
   has_secure_password
@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 	validates :username, presence: true,
 										format: /\A[A-Z0-9]+\z/i,
 										uniqueness: { case_sensitive: false }
+
+	scope :by_name, -> { order(:name) }
+	scope :not_admins, -> { by_name.where(admin: false) }
+
 	def gravatar_id
 		Digest::MD5::hexdigest(email.downcase)
 	end

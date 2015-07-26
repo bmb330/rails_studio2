@@ -11913,3 +11913,245 @@ Processing by EventsController#index as HTML
   Rendered layouts/_sidebar.html.erb (0.5ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-26 12:46:32.689542')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 6]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 7]]
+  Rendered events/index.html.erb within layouts/application (28.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (9.8ms)
+  Rendered layouts/_flashes.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 131ms (Views: 108.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/hackathon.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/katacamp.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/coffeecode.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/cocoacookoff.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/moviemarathon.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/karaoke.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/arrow.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/katacamp.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/moviemarathon.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/hackathon.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/cocoacookoff.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+
+
+Started GET "/assets/karaoke.png" for 127.0.0.1 at 2015-07-26 08:46:32 -0400
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-26 12:55:40.715342')  ORDER BY "events"."starts_at" ASC[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-26 12:55:57.310154')  ORDER BY "events"."starts_at" ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."price" = 0  ORDER BY "events"."name" ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-26 12:56:22.117375') AND "events"."price" = 0  ORDER BY "events"."starts_at" ASC, "events"."name" ASC
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE (starts_at >= '2015-07-26 13:02:50.923989')  ORDER BY "events"."starts_at" ASC LIMIT 10[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE (starts_at >= '2015-07-26 13:04:13.131803')  ORDER BY "events"."starts_at" ASC
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 4]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?  [["event_id", 6]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations"  WHERE "registrations"."event_id" = ?[0m  [["event_id", 7]]
+  Rendered events/index.html.erb within layouts/application (27.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (11.1ms)
+  Rendered layouts/_flashes.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 136ms (Views: 114.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/bugsmash.png" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/hackathon.png" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/katacamp.png" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/karaoke.png" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/cocoacookoff.png" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/coffeecode.png" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
+
+
+Started GET "/assets/moviemarathon.png" for 127.0.0.1 at 2015-07-26 09:04:13 -0400
