@@ -1,3 +1,8 @@
+<% title(@user.name) %>
+<% content_for :side do %>
+	<%= render 'users_sidebar_extras' %>
+<% end %>
+
 <header id="content-header">
 	<%= profile_image_for(@user) %>
 	<h1><%= @user.name %></h1>
@@ -7,16 +12,6 @@
 		<%= @user.created_at.strftime("%B %Y") %>
 	</p>
 </header>
-<% if @favorite_movies.any? %>
-	<h3>Favorite Movies</h3>
-	<ol>
-	<% @favorite_movies.each do |movie| %>
-		<li>
-			<%= link_to movie.title, movie %>
-		</li>
-	<% end %>
-	</ol>
-<% end %>
 <% if @reviews.any? %>
 	<h3>Movie Reviews</h3>
 	<ol>

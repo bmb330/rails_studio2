@@ -1,3 +1,9 @@
+<% title("#{@movie.title} (#{@movie.released_on.year})") %>
+
+<% content_for :side do %>
+	<%= render 'movie_sidebar_extras' %>
+<% end %>
+
 <article id="movie" class="movie">
   <header>
     <%= image_for(@movie) %>
@@ -22,29 +28,7 @@
 			<%= button_to "Fave", movie_favorites_path(@movie) %>
 		<% end %>
 	<% end %>
-	<% if @fans.any? %>
-		<h3>Fans</h3>
-		<ol>
-			<% @fans.each do |fan| %>
-				<li>
-					<%= profile_image_for(fan, size: 35) %>
-					<%= link_to fan.name, fan %>
-				</li>
-			<% end %>
-		</ol>
-	<% end %>
-  
-	<h3>Genres</h3>
-	<% if @genres.any? %>
-		<ol>
-		<% @genres.each do |genre| %>
-			<li>
-				<%= link_to genre.name %>
-			</li>
-		<% end %>
-		</ol>
-	<% end %>
-
+	
   <h3>Cast</h3>
   <p>
     <%= @movie.cast %>
